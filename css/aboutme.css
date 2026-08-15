@@ -1,0 +1,364 @@
+/* ==================================================
+   RESET Y BASE UNIFICADOS
+================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #000000;
+  scroll-behavior: smooth;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ==================================================
+   HEADER Y NAVEGACIÓN (IDÉNTICO A INDEX Y CONTACT)
+================================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  z-index: 1000;
+  color: #000000;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.nav-left, .nav-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav-left { gap: 25px; }
+.nav-right { justify-content: flex-end; }
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.nav-left a, .menu-btn {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.nav-left a:hover, .menu-btn:hover { 
+  opacity: 0.55; 
+}
+
+/* ==================================================
+   MENÚ OVERLAY EN PANTALLA COMPLETA
+================================================== */
+.fullscreen-menu {
+  position: fixed;
+  inset: 0;
+  background: #111111;
+  color: #ffffff;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.fullscreen-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fullscreen-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.fullscreen-nav a {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.fullscreen-nav a:hover {
+  opacity: 0.6;
+}
+
+.menu-footer {
+  margin-top: 40px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+
+/* ==================================================
+   DISEÑO DE LA PÁGINA ABOUT
+================================================== */
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 78px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-top-line {
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.about-top-line span:last-child { opacity: .45; }
+
+.about-editorial {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 43% 1px 57%;
+}
+
+.about-image-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 7% 35px;
+}
+
+.about-image-label {
+  width: 100%;
+  max-width: 430px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.about-image-label span:last-child { opacity: .45; }
+
+.image-wrap {
+  position: relative;
+  width: min(60%, 340px);
+  height: min(63vh, 500px);
+  overflow: hidden;
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .8s ease;
+}
+
+.about-image-caption {
+  width: 100%;
+  max-width: 430px;
+  margin-top: 14px;
+  padding-top: 12px;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+
+.about-divider {
+  width: 1px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.10);
+}
+
+.about-text-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 8% 35px;
+}
+
+.about-number {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: .2em;
+  opacity: .45;
+}
+
+.about-copy {
+  max-width: 650px;
+  margin: auto 0;
+}
+
+.about-quote {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 60px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  color: #111111;
+}
+
+.about-intro {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 1.7;
+  color: #333333;
+}
+
+.about-bottom {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.about-bottom-item {
+  min-height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+}
+
+.bottom-label {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .45;
+}
+
+.bottom-value {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+.about-bottom-line {
+  height: 34px;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.about-bottom-line span:last-child { opacity: .45; }
+
+/* ==================================================
+   RESPONSIVE DESIGN (DISPOSITIVOS MÓVILES Y TABLETS)
+================================================== */
+@media (max-width: 900px) {
+  .desktop-links { 
+    display: none; 
+  }
+}
+
+@media (max-width: 768px) {
+  .about-editorial { 
+    display: flex; 
+    flex-direction: column; 
+  }
+  
+  .about-divider { 
+    width: 100%; 
+    height: 1px; 
+  }
+
+  .image-wrap {
+    width: min(85%, 380px);
+    height: auto;
+    aspect-ratio: 340 / 500;
+  }
+  
+  .about-bottom { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .about-bottom-item:first-child { 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10); 
+  }
+}
+
+@media (max-width: 480px) {
+  .image-wrap {
+    width: min(90%, 320px);
+  }
+}

@@ -1,0 +1,553 @@
+/* =========================================================
+   OLIVE PHOTOS — CONTACT PAGE CSS
+========================================================= */
+
+/* ---------------------------------------------------------
+   [1] REGLAS BÁSICAS Y RESET
+   Afecta márgenes por defecto, fuentes globales y transiciones
+   de la página al cargar.
+--------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #111111;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Efecto de aparición suave de la página al cargar */
+body.loaded {
+  opacity: 1;
+}
+
+/* Bloquea el scroll principal cuando la ventana de políticas está abierta */
+body.policy-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+
+/* ---------------------------------------------------------
+   [2] NAVEGACIÓN SUPERIOR (NAVBAR & LOGO)
+   Estilos de la barra de menú fija superior.
+--------------------------------------------------------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  z-index: 1000;
+  background: #ffffff;
+  color: #000000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.nav-left,
+.nav-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav-left {
+  gap: 25px;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+.nav-left a,
+.menu-btn {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.nav-left a:hover, .menu-btn:hover { 
+  opacity: 0.55; 
+}
+
+
+/* ---------------------------------------------------------
+   [3] MENÚ PANTALLA COMPLETA (FULLSCREEN MENU)
+   Estilos del menú desplegable cuando presionas "MENU +"
+--------------------------------------------------------- */
+.fullscreen-menu {
+  position: fixed;
+  inset: 0;
+  background: #111111;
+  color: #ffffff;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.fullscreen-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fullscreen-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.fullscreen-nav a {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.fullscreen-nav a:hover {
+  opacity: 0.6;
+}
+
+.menu-footer {
+  margin-top: 40px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+
+/* ---------------------------------------------------------
+   [4] ESTRUCTURA PRINCIPAL DE LA PÁGINA (MAIN LAYOUT)
+   Divide la pantalla en dos columnas principales.
+--------------------------------------------------------- */
+.contact-page {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 78px;
+}
+
+.contact-form-side,
+.contact-info-side {
+  flex: 1;
+  padding: 60px 5%;
+}
+
+.contact-form-side {
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   [5] TITULO DEL FORMULARIO ("BOOK YOUR SESSION")
+   Estilos del encabezado principal en el lado izquierdo.
+--------------------------------------------------------- */
+.booking-block .booking-small {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.booking-block h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 15px 0;
+}
+
+.booking-block p {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+
+/* ---------------------------------------------------------
+   [6] FORMULARIO DE CONTACTO (FORMULARIO)
+   Campos de texto, desplegables (select) y botón de enviar.
+--------------------------------------------------------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #000;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-button {
+  background: #111;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: background 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background: #333;
+}
+
+.form-success {
+  display: none;
+  margin-top: 15px;
+  color: #27ae60;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.form-success.show {
+  display: block;
+}
+
+
+/* ---------------------------------------------------------
+   [7] FOOTER DEL IZQUIERDO Y BOTÓN "BEFORE YOU BOOK / POLICY"
+   Enlaces de Email / Instagram y el botón de políticas.
+--------------------------------------------------------- */
+.contact-footer-info {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.footer-contact-block a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.policy-launch-wrap {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.policy-launch-note {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+.policy-launch {
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #111;
+}
+
+
+/* ---------------------------------------------------------
+   [8] CONTENEDOR DE FOTOGRAFÍAS / SLIDER (LADO DERECHO)
+   ¡AQUÍ SE HIZO EL CAMBIO!
+   Se usa `object-fit: contain` y alto adecuado para que las 
+   fotos verticales se vean COMPLETAS sin recortes.
+--------------------------------------------------------- */
+.info-content {
+  position: sticky;
+  top: 100px;
+}
+
+/* Caja gris claro que sirve de marco para las fotos verticales */
+.service-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 520px; /* Altura pensada para fotos verticales */
+  max-height: 70vh; 
+  background-color: #ffffff; /* Fondo suave para los costados de la imagen */
+  overflow: hidden;
+  border-radius: 0px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-slide.active {
+  opacity: 1;
+}
+
+/* Regla clave: 'contain' evita que las fotos se recorten */
+.service-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+
+/* ---------------------------------------------------------
+   [9] INFORMACIÓN Y PRECIOS DE LOS SERVICIOS
+   Textos de Portraits, Weddings & Branding que cambian con la foto.
+--------------------------------------------------------- */
+.service-copy {
+  display: none;
+}
+
+.service-copy.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.service-index {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.service-copy h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin: 5px 0;
+}
+
+.service-price {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.service-desc {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.service-features {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+
+/* ---------------------------------------------------------
+   [10] BOTONES DE SELECCIÓN DE SERVICIOS
+   Botones numerados (01 PORTRAITS, 02 WEDDINGS, 03 BRANDING)
+--------------------------------------------------------- */
+.service-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.service-selector-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.service-selector-item.active,
+.service-selector-item:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+
+/* ---------------------------------------------------------
+   [11] VENTANA EMERGENTE DE POLÍTICAS (POLICY OVERLAY)
+   Pop-up que aparece al hacer clic en "OUR POLICY ↗".
+--------------------------------------------------------- */
+.policy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.policy-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.policy-window {
+  background: #fff;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.policy-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.policy-close {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.policy-content {
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.policy-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  font-family: "Playfair Display", serif;
+}
+
+.policy-section p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+/* ---------------------------------------------------------
+   [12] ADAPTACIÓN PARA MÓVILES (RESPONSIVE DESIGN)
+   Ajustes de pantalla para celulares y tablets.
+--------------------------------------------------------- */
+@media (max-width: 900px) {
+  .contact-page {
+    flex-direction: column;
+  }
+
+  .contact-form-side {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .desktop-links {
+    display: none;
+  }
+
+  .service-image-wrapper {
+    height: 400px; /* Ajuste proporcional para celulares */
+  }
+}
+

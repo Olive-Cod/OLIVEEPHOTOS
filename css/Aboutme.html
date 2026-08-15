@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olive | About</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/aboutme.css">
+
+    <!-- Iconos y Fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAV HEADER IDENTICO A CONTACT -->
+    <header class="nav">
+        <div class="nav-left desktop-links">
+            <a href="Aboutme.html" class="active">ABOUT</a>
+            <a href="contact.html">CONTACT + INFO</a>
+        </div>
+
+        <a href="index.html" class="logo">
+            <span class="logo-line1">OLIVE PHOTOS</span>
+        </a>
+
+        <div class="nav-right">
+            <button class="menu-btn" id="menuBtn">MENU +</button>
+        </div>
+    </header>
+
+    <!-- MENU OVERLAY FULLSCREEN IDENTICO -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <div class="menu-inner">
+            <nav class="fullscreen-nav">
+                <a href="index.html">HOME</a>
+                <a href="Aboutme.html">ABOUT</a>
+                <a href="contact.html">CONTACT + INFO</a>
+            </nav>
+
+            <div class="menu-footer">
+                <a href="https://instagram.com/oliveephotos" target="_blank" rel="noopener">@oliveephotos</a>
+                <span>•</span>
+                <a href="mailto:oliveephotos@gmail.com">Email</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN PRINCIPAL DE ABOUT -->
+    <main class="about-page">
+
+        <section class="about-editorial">
+            <!-- Columna Izquierda: Imagen -->
+            <div class="about-image-column">
+
+                <div class="image-wrap">
+                    <img src="img/IMG_2888.JPG" alt="Olive portrait">
+                </div>
+
+                <div class="about-image-caption">
+                    PHOTOGRAPHER / MEDIA ARTIST
+                </div>
+            </div>
+
+            <!-- Línea Divisora Vertical -->
+            <div class="about-divider"></div>
+
+            <!-- Columna Derecha: Texto Contenido -->
+            <div class="about-text-column">
+
+                <div class="about-copy">
+                    <h1 class="about-quote">
+                        Olive is a photographer and media artist based in Boston.
+                    </h1>
+
+                    <p class="about-intro">
+                        He photographs portraits, events, and weddings.
+                    </p>
+
+                    <p class="about-text">
+                        His work has been recognized in photography competitions
+                        and commissioned by educational and nonprofit organizations,
+                        where his photographs have been featured on digital platforms
+                        and television.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <script>
+            // Transición de entrada de página
+            window.addEventListener("load", () => {
+                document.body.classList.add("loaded");
+            });
+
+            // Transición suave entre enlaces
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const href = this.getAttribute("href");
+                    if (
+                        href &&
+                        !href.startsWith("#") &&
+                        !href.startsWith("http") &&
+                        !href.startsWith("mailto:")
+                    ) {
+                        e.preventDefault();
+                        document.body.classList.remove("loaded");
+                        setTimeout(() => {
+                            window.location = href;
+                        }, 400);
+                    }
+                });
+            });
+
+            // Lógica para Abrir / Cerrar el menú desplegable
+            const menuBtn = document.getElementById("menuBtn");
+            const fullscreenMenu = document.getElementById("fullscreenMenu");
+
+            menuBtn.addEventListener("click", () => {
+                const isActive = fullscreenMenu.classList.toggle("active");
+                menuBtn.textContent = isActive ? "MENU ×" : "MENU +";
+            });
+        </script>
+</body>
+
+</html>

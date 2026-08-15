@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Olive Portrait Studio</title>
+
+  <!-- CONTACT CSS -->
+  <link rel="stylesheet" href="css/contact.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav-left desktop-links">
+      <a href="Aboutme.html">ABOUT</a>
+      <a href="contact.html">CONTACT + INFO</a>
+    </div>
+
+    <a href="index.html" class="logo">
+      <span class="logo-line1">OLIVE PHOTOS</span>
+    </a>
+
+    <div class="nav-right">
+      <button class="menu-btn" id="menuBtn">MENU +</button>
+    </div>
+  </header>
+
+  <!-- FULLSCREEN MENU -->
+  <div class="fullscreen-menu" id="fullscreenMenu">
+    <div class="menu-inner">
+      <nav class="fullscreen-nav">
+        <a href="index.html">HOME</a>
+        <a href="Aboutme.html">ABOUT</a>
+        <a href="contact.html">CONTACT + INFO</a>
+      </nav>
+
+      <div class="menu-footer">
+        <a href="https://instagram.com/oliveephotos" target="_blank">@oliveephotos</a>
+        <span>•</span>
+        <a href="mailto:oliveephotos@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <main class="contact-page">
+
+    <!-- LEFT SIDE — FORM -->
+    <section class="contact-form-side">
+      <div class="booking-block">
+        <span class="booking-small">READY WHEN YOU ARE</span>
+        <h3>BOOK YOUR<br><em>SESSION — 2026</em></h3>
+        <p>Tell me what you're planning and let's make something great.</p>
+      </div>
+
+      <!-- FORM -->
+      <form class="contact-form" action="https://formspree.io/f/xjkpgbny" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+          </div>
+
+          <div class="form-group">
+            <label for="date">Preferred date *</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="service">What are you looking for? *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="Portraits">Portraits</option>
+              <option value="Weddings & Events">Weddings & Events</option>
+              <option value="Branding">Branding</option>
+              <option value="Headshots">Headshots</option>
+              <option value="Couples & Family">Couples & Family</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="referral">How did you hear about me?</label>
+            <select id="referral" name="referral">
+              <option value="">Select an option</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Google">Google</option>
+              <option value="Friend">Friend</option>
+              <option value="Referral">Referral</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group message-group">
+          <label for="message">Tell me about your project</label>
+          <textarea id="message" name="message" placeholder="Tell me what you're planning..."></textarea>
+        </div>
+
+        <input type="hidden" name="_subject" value="New Inquiry — Olive Portrait Studio">
+
+        <div class="submit-area">
+          <button type="submit" class="submit-button">
+            SEND INQUIRY <span>↗</span>
+          </button>
+          <p class="form-success" id="formSuccess">
+            SENT — THANK YOU. I'LL BE IN TOUCH SOON.
+          </p>
+        </div>
+      </form>
+
+      <div class="contact-footer-info">
+        <div class="footer-contact-block">
+          <a href="mailto:oliveephotos@gmail.com" aria-label="Email Olive Photos">
+            <i class="fa-regular fa-envelope"></i>
+            <span class="footer-icon-label">EMAIL</span>
+          </a>
+        </div>
+
+        <div class="footer-contact-block">
+          <a href="https://instagram.com/oliveephotos" target="_blank" class="instagram-link"
+            aria-label="Instagram Olive Photos">
+            <i class="fa-brands fa-instagram"></i>
+            <span class="footer-icon-label">INSTAGRAM</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="policy-launch-wrap">
+        <span class="policy-launch-note">BEFORE YOU BOOK</span>
+        <button type="button" class="policy-launch" id="policyButton">
+          OUR POLICY <span>↗</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- RIGHT SIDE — EXPERIENCE / SERVICES -->
+    <section class="contact-info-side">
+      <div class="info-content">
+
+        <!-- SERVICE IMAGES -->
+        <div class="service-image-wrapper">
+          <div class="service-slide active" data-slide="0">
+            <img src="img/4G6A0041-1-1.jpg" alt="Portrait photography">
+          </div>
+          <div class="service-slide" data-slide="1">
+            <img src="img/4G6A8892.jpg" alt="Wedding photography">
+          </div>
+          <div class="service-slide" data-slide="2">
+            <img src="img/IMG_2068.jpg" alt="Events photography">
+          </div>
+        </div>
+
+        <!-- SERVICE DETAILS -->
+        <div class="service-information">
+
+          <!-- 01: PORTRAITS -->
+          <div class="service-copy active" data-copy="0">
+            <span class="service-index">01</span>
+            <h2>Portraits</h2>
+            <p class="service-price">STARTS AT $200</p>
+            <p class="service-desc">
+              Whether you are celebrating a personal milestone, updating your headshots, or capturing studio and outdoor
+              portraits, every session includes guided posing, wardrobe support, and high-resolution retouched images.
+            </p>
+            <p class="service-features">
+              STUDIO &amp; OUTDOOR · GUIDED POSING · RETOUCHED DIGITALS · PRIVATE GALLERY
+            </p>
+          </div>
+
+          <!-- 02: WEDDINGS & COUPLES -->
+          <div class="service-copy" data-copy="1">
+            <span class="service-index">02</span>
+            <h2>Weddings &amp; Couples</h2>
+            <p class="service-price">STARTS AT $800</p>
+            <p class="service-desc">
+              From intimate elopements to full-day wedding celebrations, your love story is documented with an elegant,
+              editorial approach — capturing every genuine moment, emotion, and detail.
+            </p>
+            <p class="service-features">
+              ENGAGEMENTS · CEREMONY COVERAGE · FAMILY PORTRAITS · EDITED GALLERY
+            </p>
+          </div>
+
+          <!-- 03: EVENTS -->
+          <div class="service-copy" data-copy="2">
+            <span class="service-index">03</span>
+            <h2>Events</h2>
+            <p class="service-price">STARTS AT $350</p>
+            <p class="service-desc">
+              Documenting life's special gatherings and celebrations. From kids' birthdays and baby showers to church
+              ceremonies and graduations, every key highlight is captured naturally.
+            </p>
+            <p class="service-features">
+              BIRTHDAYS · BABY SHOWERS · BAPTISMS · GRADUATIONS · HIGH-RES DIGITALS
+            </p>
+          </div>
+
+        </div>
+        <!-- SERVICE SELECTOR -->
+        <div class="service-selector">
+          <button class="service-selector-item active" data-target="0">
+            <span>01</span>
+            <strong>PORTRAITS</strong>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <button class="service-selector-item" data-target="1">
+            <span>02</span>
+            <strong>WEDDINGS & COUPLES</strong>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <button class="service-selector-item" data-target="2">
+            <span>03</span>
+            <strong>EVENTS</strong>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- POLICY OVERLAY (Ubicado fuera del flujo principal para evitar conflictos de posicionamiento) -->
+  <div class="policy-overlay" id="policyOverlay" aria-hidden="true">
+    <div class="policy-window">
+      <div class="policy-header">
+        <p>OLIVE — POLICY</p>
+        <button type="button" class="policy-close" id="policyClose" aria-label="Close policy">×</button>
+      </div>
+
+      <div class="policy-content">
+        <p class="policy-intro">Please take a moment to review the booking policies before submitting an inquiry.</p>
+
+        <div class="policy-section">
+          <h2>Booking</h2>
+          <p>Please allow at least one week’s notice whenever possible before booking a portrait session or event. All
+            bookings begin with an inquiry. Availability is offered on a first-come, first-served basis.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>Payment & Retainer</h2>
+          <p>A 50% retainer is required to reserve your date. This amount is applied toward your total balance. The
+            remaining balance is due on the day of the session or before final delivery. Accepted payment methods
+            include
+            Zelle and Venmo.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>Cancellation & Rescheduling</h2>
+          <p>Cancellations made at least 24 hours in advance are eligible for a full retainer refund or can be
+            transferred to a rescheduled session. If you cancel with less than 24 hours' notice, the retainer is
+            non-refundable, and a new booking and deposit will be required for a future session.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>Photo Delivery</h2>
+          <p>Clients receive their edited, high-resolution images via a private virtual gallery within 3 to 7 days. You
+            will receive the final images included in your selected collection. Additional edited photos are available
+            for $20 USD each. Raw or unedited files are not delivered.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>Usage & Rights</h2>
+          <p>For personal sessions (portraits, events, etc.), you have full freedom to use, print, and share your photos
+            freely once paid in full. For commercial projects, brand campaigns, or business advertising, additional
+            licensing terms and agreements apply.</p>
+        </div>
+
+        <div class="policy-section policy-last">
+          <h2>Questions</h2>
+          <p>If you have any questions regarding booking, services, or payments, please reach out before submitting your
+            inquiry.</p>
+          <p><a href="mailto:oliveephotos@gmail.com"><span>-<br></span>Oliveephotos@gmail.com</a></p>
+          <p><a href="https://instagram.com/oliveephotos" target="_blank" rel="noopener">@oliveephotos</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Page Fade In
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+
+    // Page Transitions
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        if (href && !href.startsWith("#") && !href.startsWith("http") && !href.startsWith("mailto:")) {
+          e.preventDefault();
+          document.body.classList.remove("loaded");
+          setTimeout(() => { window.location = href; }, 400);
+        }
+      });
+    });
+
+    // Fullscreen Menu
+    const menuBtn = document.getElementById("menuBtn");
+    const fullscreenMenu = document.getElementById("fullscreenMenu");
+
+    if (menuBtn && fullscreenMenu) {
+      menuBtn.addEventListener("click", () => {
+        fullscreenMenu.classList.toggle("active");
+        menuBtn.textContent = fullscreenMenu.classList.contains("active") ? "MENU ×" : "MENU +";
+      });
+    }
+
+    // Services Slider
+    const slides = document.querySelectorAll(".service-slide");
+    const copies = document.querySelectorAll(".service-copy");
+    const selectorButtons = document.querySelectorAll(".service-selector-item");
+    const infoNumber = document.querySelector(".info-number");
+
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showService(index) {
+      currentSlide = index;
+
+      slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+      copies.forEach((copy, i) => copy.classList.toggle("active", i === index));
+      selectorButtons.forEach((button, i) => button.classList.toggle("active", i === index));
+
+      if (infoNumber) {
+        infoNumber.textContent = `0${index + 1} / 03`;
+      }
+    }
+
+    function startSlider() {
+      if (slides.length === 0) return;
+      slideInterval = setInterval(() => {
+        let nextSlide = (currentSlide + 1) % slides.length;
+        showService(nextSlide);
+      }, 5000);
+    }
+
+    function restartSlider() {
+      clearInterval(slideInterval);
+      startSlider();
+    }
+
+    selectorButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const target = Number(button.getAttribute("data-target"));
+        showService(target);
+        restartSlider();
+      });
+    });
+
+    showService(0);
+    startSlider();
+
+    // Policy Window Overlay
+    const policyButton = document.getElementById("policyButton");
+    const policyOverlay = document.getElementById("policyOverlay");
+    const policyClose = document.getElementById("policyClose");
+
+    function openPolicy() {
+      if (policyOverlay) {
+        policyOverlay.classList.add("active");
+        policyOverlay.setAttribute("aria-hidden", "false");
+        document.body.classList.add("policy-open");
+      }
+    }
+
+    function closePolicy() {
+      if (policyOverlay) {
+        policyOverlay.classList.remove("active");
+        policyOverlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("policy-open");
+      }
+    }
+
+    if (policyButton) policyButton.addEventListener("click", openPolicy);
+    if (policyClose) policyClose.addEventListener("click", closePolicy);
+
+    if (policyOverlay) {
+      policyOverlay.addEventListener("click", (event) => {
+        if (event.target === policyOverlay) closePolicy();
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && policyOverlay && policyOverlay.classList.contains("active")) {
+        closePolicy();
+      }
+    });
+
+    // Formspree Handling
+    const contactForm = document.querySelector(".contact-form");
+    const formSuccess = document.getElementById("formSuccess");
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const submitButton = contactForm.querySelector("button[type='submit']");
+        submitButton.disabled = true;
+        submitButton.textContent = "SENDING...";
+
+        const formData = new FormData(contactForm);
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (response.ok) {
+            contactForm.reset();
+            submitButton.textContent = "SENT";
+            if (formSuccess) formSuccess.classList.add("show");
+          } else {
+            submitButton.disabled = false;
+            submitButton.textContent = "SEND INQUIRY";
+            if (formSuccess) formSuccess.classList.remove("show");
+          }
+        } catch (error) {
+          submitButton.disabled = false;
+          submitButton.textContent = "SEND INQUIRY";
+          if (formSuccess) formSuccess.classList.remove("show");
+          console.error("Formspree error:", error);
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
